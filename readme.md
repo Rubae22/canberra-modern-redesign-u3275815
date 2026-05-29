@@ -2,7 +2,7 @@
 
 **Student ID:** u3275815
 **Unit:** Front-end Web Design (11056)
-**Live URL:** [ADD GITHUB PAGES LINK HERE BEFORE SUBMISSION]
+**Live URL:** [(https://rubae22.github.io/canberra-modern-redesign-u3275815/)]
 
 ---
 
