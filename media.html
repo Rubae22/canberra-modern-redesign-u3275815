@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media — Canberra Modern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fustat: Regular (400) for body/subtitles, ExtraBold (800) for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- SITE NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="Canberra Modern home">
+        <!-- Replace logo.png/svg in assets/images/ with your own logo file -->
+        <img class="site-nav__logo-img" src="assets/images/logo.svg" alt="Canberra Modern logo" />
+        <span class="site-nav__logo-text">Canberra<br>Modern</span>
+      </a>
+      <button class="site-nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="site-nav__close" aria-label="Close navigation menu">&times;</button>
+      <ul class="site-nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="media.html" aria-current="page">Media</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- =========================================================
+         MEDIA PAGE HERO
+         Teal background matching prototype.
+         ========================================================= -->
+    <header class="page-hero page-hero--teal" aria-labelledby="media-page-heading">
+      <div class="container">
+        <h1 id="media-page-heading">Stories of Our Heritage</h1>
+        <p>
+          Tune in to our ABC Radio series, read our blog posts, watch interviews and
+          explore resources celebrating Canberra's modernist architecture.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- =========================================================
+         TAB NAVIGATION
+         Three tabs: ABC Radio / Blog Posts / Videos.
+         JS switches aria-selected and aria-hidden to show/hide panels.
+         ========================================================= -->
+    <div class="container">
+      <div class="media-tabs" role="tablist" aria-label="Media categories">
+        <button class="media-tab-btn"
+                role="tab"
+                aria-selected="true"
+                aria-controls="tab-radio"
+                data-tab="tab-radio"
+                id="btn-radio">
+          ABC Radio
+        </button>
+        <button class="media-tab-btn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tab-blog"
+                data-tab="tab-blog"
+                id="btn-blog">
+          Blog Posts
+        </button>
+        <button class="media-tab-btn"
+                role="tab"
+                aria-selected="false"
+                aria-controls="tab-videos"
+                data-tab="tab-videos"
+                id="btn-videos">
+          Videos
+        </button>
+      </div>
+    </div>
+
+
+    <!-- =========================================================
+         TAB PANEL: ABC RADIO
+         ========================================================= -->
+    <div id="tab-radio"
+         class="media-tab-panel"
+         role="tabpanel"
+         aria-labelledby="btn-radio"
+         aria-hidden="false">
+
+      <div class="container">
+
+        <!-- Radio series header box -->
+        <div class="radio-header">
+          <h3>CM's Architecture Tour on ABC Radio Canberra 666</h3>
+          <p>Each Friday from 10.35am on ABC Mornings with Georgia Stynes</p>
+        </div>
+
+        <!-- Episodes grid — three columns on desktop -->
+        <div class="episodes-grid" role="list">
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-telstra-tower.jpg" alt="Telstra Tower on Black Mountain" />
+              <span class="episode-card__ep-label">Episode 1</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-telstra-tower/103980872" target="_blank" rel="noopener" class="episode-card__title-link">Telstra Tower</a></h4>
+              <p>
+                Canberra Modern's Amy Jarvis &amp; Rachel Jackson discuss a Canberra landmark
+                on Black Mountain.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-callam-offices.jpg" alt="Callam Offices Woden" />
+              <span class="episode-card__ep-label">Episode 2</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-callam-offices/104008886" target="_blank" rel="noopener" class="episode-card__title-link">Callam Offices</a></h4>
+              <p>
+                Edwina Jans &amp; Dr Gally Farrah from the University of Melbourne discuss
+                this misunderstood architectural work.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-torrens-shops.jpg" alt="Torrens Shops" />
+              <span class="episode-card__ep-label">Episode 3</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-torrens-shopping-centre/104038258" target="_blank" rel="noopener" class="episode-card__title-link">Torrens Shops</a></h4>
+              <p>
+                A fascinating architectural gem from the Canberra Museum &amp; Gallery, awarded the
+                DS 25 Year Award from the Australian Institute of Architects.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-school-art-design.jpg" alt="School of Art and Design ANU" />
+              <span class="episode-card__ep-label">Episode 4</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-anu-school-of-art-and-design/104091434" target="_blank" rel="noopener" class="episode-card__title-link">School of Art and Design</a></h4>
+              <p>
+                Amy Jarvis &amp; Rachel Jackson discuss changes and redevelopment challenges
+                at one of Australia's most prestigious art schools.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-churchill-house.jpg" alt="Churchill House Braddon" />
+              <span class="episode-card__ep-label">Episode 5</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-churchill-house/104118106" target="_blank" rel="noopener" class="episode-card__title-link">Churchill House</a></h4>
+              <p>
+                A conversation with Dr Amy Cleary from the University of Canberra about the
+                architectural legacy of Robin Boyd.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-former-mlc.jpg" alt="Former MLC Building" />
+              <span class="episode-card__ep-label">Episode 6</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-canberra-s-first-multi-story-office-building/104154858" target="_blank" rel="noopener" class="episode-card__title-link">Former MLC Building</a></h4>
+              <p>
+                Rachel Jackson joined by Linda Roberts from the National Trust discussing
+                this building's revolutionary construction and unique ability to hide its appearance.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-urambi-village.jpg" alt="Urambi Village" />
+              <span class="episode-card__ep-label">Episode 7</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-urambi-village-in-kambah/104199394" target="_blank" rel="noopener" class="episode-card__title-link">Urambi Village</a></h4>
+              <p>
+                Edwina Jans &amp; Liannie Resident/Heritage Architect David Holmes discuss
+                Canberra's first housing co-operative.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-woden-library.jpg" alt="Woden Library" />
+              <span class="episode-card__ep-label">Episode 8</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-woden-library-and-health-centre/104206332" target="_blank" rel="noopener" class="episode-card__title-link">Woden Library and Phillip Healthcare Centre</a></h4>
+              <p>
+                Amy Jarvis with architect and former National President of the Australian
+                Institute of Architects Warwick Battson.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-aia-hq.jpg" alt="AIA Headquarters Canberra" />
+              <span class="episode-card__ep-label">Episode 9</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-aia/104241890" target="_blank" rel="noopener" class="episode-card__title-link">AIA Headquarters</a></h4>
+              <p>
+                Rachel Jackson &amp; Executive Director of the Australian Institute of Architects
+                (AIA), Rob Henry, discuss 2a Mugga Way.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-manning-clark.jpg" alt="Manning Clark House" />
+              <span class="episode-card__ep-label">Episode 10</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/manning-clark-house/104262352" target="_blank" rel="noopener" class="episode-card__title-link">Manning Clark House</a></h4>
+              <p>
+                Amy Jarvis and Janet Wilson, Volunteer and former Committee Member of Manning
+                Clark Inc., discuss the iconic Robin Boyd residence.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-high-court.jpg" alt="High Court of Australia" />
+              <span class="episode-card__ep-label">Episode 11</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-high-court/104300064" target="_blank" rel="noopener" class="episode-card__title-link">High Court</a></h4>
+              <p>
+                Rachel Jackson and ACT Government Architect Catherine Townsend discuss the
+                High Court, listed on the National Heritage List.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-carousel-restaurant.jpg" alt="Former Carousel Restaurant" />
+              <span class="episode-card__ep-label">Episode 12</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour/104327358" target="_blank" rel="noopener" class="episode-card__title-link">Former Carousel Restaurant</a></h4>
+              <p>
+                Amy Jarvis discusses the Canberra landmark with a stunning view of the
+                city and an interesting design story with links to European migration history.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-cinema-centre.jpg" alt="Canberra Cinema Centre" />
+              <span class="episode-card__ep-label">Episode 13</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/cinema-center/104550166" target="_blank" rel="noopener" class="episode-card__title-link">Cinema Centre</a></h4>
+              <p>
+                Edwina Jans &amp; CMAG's Virginia Rigney discuss the important contribution
+                the Centre made to the cultural life of Canberra during the late twentieth century.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-canberra-bus-shelters.jpg" alt="Canberra Bus Shelters" />
+              <span class="episode-card__ep-label">Episode 14</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/bus-shelters/104404990" target="_blank" rel="noopener" class="episode-card__title-link">Canberra Bus Shelters</a></h4>
+              <p>
+                Discussing everything from bus to postcards and they are also talking about
+                the distinctive Canberra icon with Georgia Stynes.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-shine-dome.jpg" alt="The Shine Dome" />
+              <span class="episode-card__ep-label">Episode 15</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/shine-dome/104550780" target="_blank" rel="noopener" class="episode-card__title-link">The Shine Dome</a></h4>
+              <p>
+                The Australian Academy of Science's Shine Dome was designed by prominent
+                architect Roy Grounds and is listed on the National Heritage List. Rachel
+                Jackson discusses this modernist icon with Emeritus Professor Hans Bachin.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-benjamin-house.jpg" alt="Benjamin House" />
+              <span class="episode-card__ep-label">Episode 16</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/benjamin-house/104548668" target="_blank" rel="noopener" class="episode-card__title-link">Benjamin House</a></h4>
+              <p>
+                The Benjamin House, or Round House, is a residence in the Canberra suburb of
+                Deakin. Army resident and former National President of the Australian Institute
+                of Architects Roger Benjamin discusses this residential gem.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-surveyors-hut.jpg" alt="Surveyors Hut" />
+              <span class="episode-card__ep-label">Episode 17</span>
+            </div>
+            <div class="episode-card__body">
+              <h4>Surveyors Hut</h4>
+              <p>Coming soon.</p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-scrivener-dam.jpg" alt="Scrivener Dam" />
+              <span class="episode-card__ep-label">Episode 18</span>
+            </div>
+            <div class="episode-card__body">
+              <h4><a href="https://www.abc.net.au/listen/programs/canberra-mornings/scrivener-dam/104551056" target="_blank" rel="noopener" class="episode-card__title-link">Scrivener Dam</a></h4>
+              <p>
+                A brutal and infrastructural piece of Canberra, Scrivener Dam helped shape
+                the cultural landscape. Edwina Jans discusses the extraordinary story of
+                the innovation and ingenuity of the men who built it.
+              </p>
+            </div>
+          </article>
+
+          <article class="episode-card" role="listitem">
+            <div class="episode-card__img-wrap">
+              <img src="assets/images/ep-national-carillon.jpg" alt="National Carillon" />
+              <span class="episode-card__ep-label">Episode 19</span>
+            </div>
+            <div class="episode-card__body">
+              <h4>National Carillon</h4>
+              <p>Coming soon.</p>
+            </div>
+          </article>
+
+        </div><!-- /episodes-grid -->
+      </div><!-- /container -->
+
+    </div><!-- /tab-radio -->
+
+
+    <!-- =========================================================
+         TAB PANEL: BLOG POSTS
+         ========================================================= -->
+    <div id="tab-blog"
+         class="media-tab-panel"
+         role="tabpanel"
+         aria-labelledby="btn-blog"
+         aria-hidden="true">
+
+      <div class="container blog-listing">
+
+        <article class="blog-listing__item">
+          <p class="blog-listing__date">5 March 2025</p>
+          <h3 class="blog-listing__heading">
+            <a href="media-blog.html" class="blog-listing__link">
+              David Webb: Model Architecture
+            </a>
+          </h3>
+          <p class="blog-listing__summary">
+            An in-depth interview with architect David Webb, exploring his approach to model-making
+            as a primary design tool and his influence on Canberra's residential modernism.
+          </p>
+        </article>
+
+      </div>
+    </div><!-- /tab-blog -->
+
+
+    <!-- =========================================================
+         TAB PANEL: VIDEOS
+         ========================================================= -->
+    <div id="tab-videos"
+         class="media-tab-panel"
+         role="tabpanel"
+         aria-labelledby="btn-videos"
+         aria-hidden="true">
+
+      <div class="container video-section-pad">
+
+        <!-- Video section: Growing Up Modern panel -->
+        <div class="video-section">
+          <h3>'Growing Up Modern' Panel — Giralang Primary School</h3>
+          <p>
+            Five Canberrans share their 'Growing Up Modern' stories and how they helped shape
+            who they are today through architecture, planning and design.
+          </p>
+
+          <div class="video-grid-row">
+
+            <!-- Cell 1 -->
+            <div class="video-grid-cell">
+              <a href="https://www.youtube.com/watch?v=oTAYl6OEWwA" target="_blank" rel="noopener">
+                <div class="video-thumbnail">
+                  <img src="https://img.youtube.com/vi/oTAYl6OEWwA/hqdefault.jpg" alt="Growing Up Modern introduction video" />
+                  <div class="video-thumbnail__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </a>
+              <p class="video-meta">Growing Up Modern – Introduction</p>
+            </div>
+
+            <!-- Cell 2 -->
+            <div class="video-grid-cell">
+              <a href="https://youtu.be/DuHS-2xJExc?si=lUQ0aPUKcgNKETop" target="_blank" rel="noopener">
+                <div class="video-thumbnail">
+                  <img src="https://img.youtube.com/vi/DuHS-2xJExc/hqdefault.jpg" alt="Virginia Rigney interview" />
+                  <div class="video-thumbnail__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </a>
+              <p class="video-meta">Growing Up Modern – Virginia Rigney</p>
+            </div>
+
+            <!-- Cell 3 -->
+            <div class="video-grid-cell">
+              <a href="https://youtu.be/FQb9sAwm7ns?si=_cgYscsIv7W8fgR7" target="_blank" rel="noopener">
+                <div class="video-thumbnail">
+                  <img src="https://img.youtube.com/vi/FQb9sAwm7ns/hqdefault.jpg" alt="Tanja Taglietti interview" />
+                  <div class="video-thumbnail__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </a>
+              <p class="video-meta">Growing Up Modern – Tanja Taglietti, Artist and Designer</p>
+            </div>
+
+            <!-- Cell 4 -->
+            <div class="video-grid-cell">
+              <a href="https://youtu.be/s4F5Ls9Zuko?si=DqV1MKXU3cBmtxLm" target="_blank" rel="noopener">
+                <div class="video-thumbnail">
+                  <img src="https://img.youtube.com/vi/s4F5Ls9Zuko/hqdefault.jpg" alt="Dr Georgia Pies-Rowney interview" />
+                  <div class="video-thumbnail__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </a>
+              <p class="video-meta">Growing Up Modern – Dr Georgia Pies-Rowney</p>
+            </div>
+
+            <!-- Cell 5 -->
+            <div class="video-grid-cell">
+              <a href="https://youtu.be/L1MjM2fjOEk?si=Cnx5LIs700fOQDvI" target="_blank" rel="noopener">
+                <div class="video-thumbnail">
+                  <img src="https://img.youtube.com/vi/L1MjM2fjOEk/hqdefault.jpg" alt="Professor Roger Benjamin interview" />
+                  <div class="video-thumbnail__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </a>
+              <p class="video-meta">Growing Up Modern – Professor Roger Benjamin</p>
+            </div>
+
+            <!-- Cell 6 -->
+            <div class="video-grid-cell">
+              <a href="https://youtu.be/iwBVZyhCqsw?si=QKwT2TuIIwVmw8PR" target="_blank" rel="noopener">
+                <div class="video-thumbnail">
+                  <img src="https://img.youtube.com/vi/iwBVZyhCqsw/hqdefault.jpg" alt="Geoff Ashley interview" />
+                  <div class="video-thumbnail__play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+                  </div>
+                </div>
+              </a>
+              <p class="video-meta">Growing Up Modern – Geoff Ashley</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Video section: In Conversation with Ian Wong -->
+        <div class="video-section">
+          <h3>In Conversation with Ian Wong</h3>
+          <p>
+            One of Australia's leading collections of Australian industrial design, science,
+            medicine and design critic Australian design with Canberra Modern.
+          </p>
+          <a href="https://youtu.be/9YIG8o5GOrE?si=3U5U3iOOCM2mko_M" target="_blank" rel="noopener" class="video-link">
+<div class="video-thumbnail video-thumbnail--featured">
+            <img src="https://img.youtube.com/vi/9YIG8o5GOrE/hqdefault.jpg" alt="In conversation with Ian Wong" />
+            <div class="video-thumbnail__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+</a>
+          <p class="video-meta">Canberra Modern in conversation with Ian Wong</p>
+        </div>
+
+        <!-- Video section: What is Modernism -->
+        <div class="video-section">
+          <h3>What is Modernism?</h3>
+          <p>
+            Ms Modernism, Annabel Caporn asks the question – What is Modernism?
+          </p>
+          <a href="https://youtu.be/urGgX8XzkyI?si=wTRceXURVV_HI-yA" target="_blank" rel="noopener" class="video-link">
+<div class="video-thumbnail video-thumbnail--featured">
+            <img src="https://img.youtube.com/vi/urGgX8XzkyI/hqdefault.jpg" alt="What is Modernism video" />
+            <div class="video-thumbnail__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+</a>
+          <p class="video-meta">What is Modernism?</p>
+        </div>
+
+        <!-- Video section: Instagram Live with Catriona Quinn -->
+        <div class="video-section">
+          <h3>Instagram Live chat with Catriona Quinn</h3>
+          <p>
+            Live chat with design historian and curator Catriona Quinn on Australian mid-century design.
+          </p>
+          <a href="https://youtu.be/U4VcWfYorLU?si=-XHmwRf2m93PvmCV" target="_blank" rel="noopener" class="video-link">
+            <div class="video-thumbnail video-thumbnail--featured">
+              <img src="https://img.youtube.com/vi/U4VcWfYorLU/hqdefault.jpg" alt="Instagram Live with Catriona Quinn" />
+              <div class="video-thumbnail__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </a>
+          <p class="video-meta">Canberra Modern Instagram Live chat with Catriona Quinn</p>
+        </div>
+
+        <!-- Video section: University House -->
+        <div class="video-section">
+          <h3>University House</h3>
+          <p>
+            Amanda's film on the ANU about University House.
+          </p>
+          <a href="https://youtu.be/Xu8KwFVP5WY?si=bNA5_cjgDvMQ7WYF" target="_blank" rel="noopener" class="video-link">
+            <div class="video-thumbnail video-thumbnail--featured">
+              <img src="https://img.youtube.com/vi/Xu8KwFVP5WY/hqdefault.jpg" alt="University House film" />
+              <div class="video-thumbnail__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+          </a>
+          <p class="video-meta">The Australian National University about University House</p>
+        </div>
+
+      </div>
+    </div><!-- /tab-videos -->
+
+
+    <!-- =========================================================
+         WEBSITES YOU MIGHT LIKE
+         Teal background grid of nine partner/related websites.
+         ========================================================= -->
+    <section class="section-websites" aria-labelledby="websites-heading">
+      <div class="container">
+        <h2 id="websites-heading">Websites You Might Like</h2>
+
+        <div class="websites-grid" role="list">
+
+          <div class="website-card" role="listitem">
+            <h4>Canberra House</h4>
+            <p>The best archive of Canberra's architectural history you could ever find.</p>
+            <a href="https://www.canberrahouse.com.au/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Tim Ross</h4>
+            <p>Comedian and self proclaimed design and architecture nerd.</p>
+            <a href="https://modernisterbooks.com/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Darren Bradley Blog</h4>
+            <p>Photographer and architecture aficionado Darren Bradley shares his thoughts and stunning images.</p>
+            <a href="https://www.darrenbradleyphotography.com/news" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Modernist Australia</h4>
+            <p>Looking for a modern property? This is the place to look!</p>
+            <a href="https://www.modernistaustralia.com/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Design Canberra</h4>
+            <p>A fab festival of events for all you design buffs in November each year.</p>
+            <a href="https://craftanddesigncanberra.org/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Manning Clark House</h4>
+            <p>A Robin Boyd Designed Gem from ABC on our doorstep.</p>
+            <a href="https://www.manningclark.org.au/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Beaumaris Modern</h4>
+            <p>Our friends at Beaumaris Modern in Melbourne do a wonderful job preserving the MCM character of their seaside oasis.</p>
+            <a href="https://beaumarismodern.com.au/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Amy Jarvis' Churchill Fellowship</h4>
+            <p>Canberra Modern's own Amy Jarvis completed her Churchill Fellowship exploring heritage places and spaces.</p>
+            <a href="https://www.churchilltrust.com.au/fellow/amy-jarvis-act-2018/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+          <div class="website-card" role="listitem">
+            <h4>Palm Springs Modernism Week</h4>
+            <p>A worldwide phenomenon of MCM celebration, last held Feb 2020 in Palm Springs, USA.</p>
+            <a href="https://modernismweek.com/" target="_blank" rel="noopener" class="btn btn--dark">Visit</a>
+          </div>
+
+        </div><!-- /websites-grid -->
+      </div>
+    </section><!-- /section-websites -->
+
+  </main>
+
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer__inner">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">Canberra<br>Modern</p>
+        <p class="footer-brand__copy">&copy; 2026 Canberra Modern.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Contact</h4>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/canberramodern/" aria-label="Canberra Modern on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/canberra_modern/" aria-label="Canberra Modern on Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          </a>
+        </div>
+        <a href="contact.html">Message us</a>
+      </div>
+      <nav class="footer-pages" aria-label="Footer page links">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="media.html">Media</a></li>
+        </ul>
+      </nav>
+      <div class="footer-partners">
+        <h4>Partners</h4>
+        <ul role="list">
+          <li><a href="https://unihouse.anu.edu.au/" target="_blank" rel="noopener">University House</a></li>
+          <li><a href="https://www.design.org.au/" target="_blank" rel="noopener">Design Institute of Australia</a></li>
+          <li><a href="https://australia.icomos.org/" target="_blank" rel="noopener">Australia ICOMOS</a></li>
+          <li><a href="https://gml.com.au/" target="_blank" rel="noopener">GML Heritage</a></li>
+          <li><a href="https://www.themilldesign.com.au/" target="_blank" rel="noopener">The Mill Architecture and Design</a></li>
+          <li><a href="https://www.architecture.com.au/act-chapter" target="_blank" rel="noopener">The Australian Institute of Architects</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Required UC assessment footer note -->
+    <p class="footer-assessment-note">
+      This website was produced by students in the Faculty of Arts &amp; Design,
+      University of Canberra, 2026.
+    </p>
+
+  </footer>
+
+  <script src="assets/js/javascript.js"></script>
+</body>
+</html>

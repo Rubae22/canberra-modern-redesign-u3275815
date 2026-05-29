@@ -1,0 +1,2062 @@
+/* =============================================================================
+   CANBERRA MODERN — styles.css
+   Author: UC Student
+   Description: Main stylesheet for the Canberra Modern website redesign.
+   Uses CSS custom properties, Flexbox, and media queries for responsive layout.
+   ============================================================================= */
+
+/* -----------------------------------------------------------------------------
+   1. CSS CUSTOM PROPERTIES (Design Tokens)
+   Centralising all colours, fonts and spacing so changes cascade site-wide.
+   ----------------------------------------------------------------------------- */
+:root {
+  /* Colour palette extracted from hi-fi prototype */
+  --colour-teal:        #2B7DA1;   /* Primary headings, hero background */
+  --colour-teal-dark:   #1d5f7a;   /* Hover / active states on teal */
+  --colour-orange:      #E8A020;   /* Team section, accent headings */
+  --colour-orange-dark: #c4871a;   /* Hover on orange elements */
+  --colour-olive:       #4a5e28;   /* Events section background */
+  --colour-olive-mid:   #5C6B2E;   /* Events heading text */
+  --colour-cream:       #F5F0E8;   /* Light background sections */
+  --colour-light-blue:  #C8DFF0;   /* Form card backgrounds */
+  --colour-black:       #1A1A1A;   /* Body text */
+  --colour-white:       #FFFFFF;
+  --colour-grey-mid:    #666666;   /* Secondary text */
+  --colour-grey-light:  #EEEEEE;   /* Borders, dividers */
+  --colour-tag-tour:    #2B7DA1;
+  --colour-tag-lecture: #E8A020;
+  --colour-tag-talk:    #4a5e28;
+  --colour-tag-seminar: #8B4513;
+
+  /* Typography — Fustat used throughout:
+     ExtraBold (800) for all headings and titles,
+     Regular (400) for body text, subtitles and UI elements */
+  --font-heading: 'Fustat', sans-serif;
+  --font-body:    'Fustat', sans-serif;
+  --font-ui:      'Fustat', sans-serif;
+
+  /* Spacing scale */
+  --space-xs:   0.5rem;
+  --space-sm:   1rem;
+  --space-md:   1.5rem;
+  --space-lg:   2.5rem;
+  --space-xl:   4rem;
+  --space-xxl:  6rem;
+
+  /* Layout */
+  --max-width:      1200px;
+  --nav-height:     70px;
+  --border-radius:  4px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-mid:  300ms ease;
+}
+
+/* -----------------------------------------------------------------------------
+   2. RESET / BASE
+   Minimal reset to normalise cross-browser rendering differences.
+   ----------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--colour-black);
+  background-color: var(--colour-white);
+  line-height: 1.6;
+  /* Prevent horizontal scroll caused by full-width sections */
+  overflow-x: hidden;
+}
+
+img {
+  /* Images scale down within containers but never stretch beyond natural size */
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* -----------------------------------------------------------------------------
+   3. TYPOGRAPHY
+   ----------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  /* Fustat ExtraBold weight for all headings and titles */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.6rem); }
+h4 { font-size: 1.1rem; }
+
+p {
+  font-family: var(--font-body);
+  /* Fustat Regular weight for body text and subtitles */
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Italic accent style used in prototype (e.g. "Conservation Through Participation") */
+.text-italic-accent {
+  font-style: italic;
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+/* -----------------------------------------------------------------------------
+   4. UTILITY CLASSES
+   ----------------------------------------------------------------------------- */
+.container {
+  /* Centres content and constrains maximum width */
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section-pad {
+  padding: var(--space-xl) 0;
+}
+
+.visually-hidden {
+  /* Hide element from screen while keeping it accessible to screen readers */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* -----------------------------------------------------------------------------
+   5. BUTTONS
+   Reusable button styles. Outlined style matches prototype's CTA buttons.
+   ----------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.8rem;
+  border: 2px solid currentColor;
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  /* No rounded corners — angular feel matches architectural theme */
+  border-radius: 0;
+}
+
+.btn:hover {
+  background: var(--colour-black);
+  color: var(--colour-white);
+  border-color: var(--colour-black);
+}
+
+/* Outlined button on dark backgrounds */
+.btn--light {
+  color: var(--colour-white);
+  border-color: var(--colour-white);
+}
+
+.btn--light:hover {
+  background: var(--colour-white);
+  color: var(--colour-black);
+}
+
+/* Outlined button on teal/coloured backgrounds */
+.btn--dark {
+  color: var(--colour-black);
+  border-color: var(--colour-black);
+}
+
+.btn--dark:hover {
+  background: var(--colour-black);
+  color: var(--colour-white);
+}
+
+/* -----------------------------------------------------------------------------
+   6. NAVIGATION
+   Fixed top bar. Logo left, nav links right.
+   ----------------------------------------------------------------------------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--colour-white);
+  border-bottom: 1px solid var(--colour-grey-light);
+  height: var(--nav-height);
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Logo: image icon + wordmark text stacked */
+.site-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-decoration: none;
+}
+
+.site-nav__logo-img {
+  width: 36px;
+  height: auto;
+}
+
+.site-nav__logo-text {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: var(--colour-black);
+  letter-spacing: 0.05em;
+}
+
+/* Nav links row */
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.site-nav__links a {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+  color: var(--colour-black);
+}
+
+/* Outlined style for each nav item (matches prototype) */
+.site-nav__links a:hover,
+.site-nav__links a[aria-current="page"] {
+  border-color: var(--colour-black);
+}
+
+/* Required UC assessment footer note — sits below the main footer columns */
+.footer-assessment-note {
+  max-width: var(--max-width);
+  margin: var(--space-md) auto 0;
+  padding: var(--space-sm) var(--space-md) 0;
+  border-top: 1px solid #333;
+  font-size: 0.75rem;
+  color: #888;
+  font-family: var(--font-ui);
+}
+.site-nav__close {
+  display: none;
+}
+
+/* Hamburger — hidden on desktop (above 860px), shown on smaller screens */
+.site-nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  z-index: 201;
+  position: relative;
+}
+
+.site-nav__toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--colour-black);
+  transition: transform var(--transition-mid), opacity var(--transition-mid);
+}
+
+/* Dark backdrop — covers the page behind the dropdown when menu is open.
+   Applied via JS adding .menu-open to .site-nav */
+.site-nav::after {
+  content: '';
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+  animation: backdropFade 200ms ease forwards;
+}
+
+@keyframes backdropFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.site-nav.menu-open::after {
+  display: block;
+}
+
+/* Show hamburger and dropdown below 860px */
+@media (max-width: 860px) {
+  .site-nav__toggle {
+    display: flex;
+  }
+
+  /* Dropdown panel — white box below nav bar, page dims behind it */
+  .site-nav__links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--colour-white);
+    border-bottom: 2px solid var(--colour-grey-light);
+    /* Generous top/bottom padding, links spaced far apart */
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-lg);
+    z-index: 99;
+  }
+
+  .site-nav__links.is-open {
+    display: flex;
+  }
+
+  /* Large text, no borders, no boxes — just clean spaced words */
+  .site-nav__links a {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--colour-black);
+    border: none;
+    background: transparent;
+    transition: color var(--transition-fast);
+  }
+
+  .site-nav__links a:hover,
+  .site-nav__links a[aria-current="page"] {
+    color: var(--colour-teal);
+    border: none;
+    background: transparent;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   7. FOOTER
+   Four-column layout on desktop, stacking on mobile.
+   ----------------------------------------------------------------------------- */
+.site-footer {
+  background: var(--colour-black);
+  color: var(--colour-white);
+  padding: var(--space-xl) 0 var(--space-md);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Column 1: Logo + copyright */
+.footer-brand {
+  flex: 1 1 200px;
+}
+
+.footer-brand__logo {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  color: var(--colour-white);
+  margin-bottom: var(--space-md);
+}
+
+.footer-brand__copy {
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-top: var(--space-md);
+  line-height: 1.5;
+}
+
+/* Column 2: Contact + social icons */
+.footer-contact {
+  flex: 1 1 180px;
+}
+
+.footer-contact h4,
+.footer-pages h4,
+.footer-partners h4 {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  color: var(--colour-white);
+}
+
+.footer-social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+/* Social icons use SVG inline; size them consistently */
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.footer-social svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--colour-white);
+  transition: fill var(--transition-fast);
+}
+
+.footer-social a:hover svg {
+  fill: var(--colour-teal);
+}
+
+.footer-contact a {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Columns 3 & 4: Page links and partner links */
+.footer-pages,
+.footer-partners {
+  flex: 1 1 160px;
+}
+
+.footer-pages li,
+.footer-partners li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-pages a,
+.footer-partners a {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: #cccccc;
+  transition: color var(--transition-fast);
+}
+
+.footer-pages a:hover,
+.footer-partners a:hover {
+  color: var(--colour-white);
+}
+
+
+
+/* -----------------------------------------------------------------------------
+   8. HERO — HOME PAGE
+   Full-width image carousel with prev/next arrows.
+   ----------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  /* Tall enough to feel immersive but not full-viewport on desktop */
+  height: clamp(300px, 55vw, 600px);
+  overflow: hidden;
+  background: #222;
+}
+
+.hero__slides {
+  display: flex;
+  height: 100%;
+  /* JS will translate this to show the active slide */
+  transition: transform 600ms ease;
+}
+
+.hero__slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Image credit caption — bottom-right overlay */
+.hero__credit {
+  position: absolute;
+  bottom: var(--space-xs);
+  right: var(--space-sm);
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-ui);
+}
+
+/* Prev / Next arrow buttons */
+.hero__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.35);
+  color: var(--colour-white);
+  border: none;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  /* Using chevrons — accessible names added via aria-label in HTML */
+  z-index: 10;
+}
+
+.hero__btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.hero__btn--prev { left: var(--space-sm); }
+.hero__btn--next { right: var(--space-sm); }
+
+/* -----------------------------------------------------------------------------
+   9. HOME — ABOUT / INTRO SECTION (teal background)
+   ----------------------------------------------------------------------------- */
+.section-about {
+  background: var(--colour-teal);
+  color: var(--colour-white);
+  padding: var(--space-xl) 0;
+}
+
+.section-about h1 {
+  color: var(--colour-orange);
+  margin-bottom: var(--space-md);
+}
+
+.section-about .text-italic-accent {
+  color: var(--colour-orange);
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.section-about p {
+  max-width: 700px;
+  margin-bottom: var(--space-sm);
+  opacity: 0.92;
+}
+
+.section-about .btn {
+  margin-top: var(--space-md);
+}
+
+/* -----------------------------------------------------------------------------
+   10. HOME — "DON'T MISS OUT" EVENTS TEASER
+   Split layout: text left, button right on desktop.
+   ----------------------------------------------------------------------------- */
+.section-events-teaser {
+  padding: var(--space-xl) 0;
+  background: var(--colour-white);
+}
+
+.events-teaser__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.events-teaser__text h2 {
+  color: var(--colour-teal);
+  margin-bottom: var(--space-sm);
+}
+
+.events-teaser__text p {
+  max-width: 480px;
+  color: var(--colour-black);
+}
+
+/* -----------------------------------------------------------------------------
+   11. HOME — OUR TEAM (orange background)
+   Three-column card grid on desktop.
+   ----------------------------------------------------------------------------- */
+.section-team {
+  background: var(--colour-orange);
+  padding: var(--space-xl) 0;
+  /* Heading and intro paragraph stay left-aligned */
+  text-align: left;
+}
+
+.section-team h2 {
+  color: var(--colour-white);
+  margin-bottom: var(--space-sm);
+}
+
+.section-team > .container > p {
+  color: var(--colour-white);
+  max-width: 640px;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.team-grid {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  /* Centre the cards as a group within the section */
+  justify-content: center;
+}
+
+.team-card {
+  flex: 1 1 200px;
+  max-width: 300px;
+  /* Centre the photo, name and description within each card */
+  text-align: center;
+}
+
+.team-card__img {
+  /* 272x272 square — exact prototype size */
+  width: 272px;
+  height: 272px;
+  object-fit: cover;
+  object-position: top;
+  margin-bottom: var(--space-sm);
+  /* Centre the square image within the card */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-card h3 {
+  color: var(--colour-white);
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.team-card p {
+  color: var(--colour-white);
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------------------------
+   12. HOME — OUR PATRON
+   Text left, image right on desktop.
+   ----------------------------------------------------------------------------- */
+.section-patron {
+  padding: var(--space-xl) 0;
+  background: var(--colour-white);
+}
+
+.section-patron h2 {
+  color: var(--colour-teal);
+  margin-bottom: var(--space-lg);
+}
+
+.patron__inner {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.patron__text {
+  flex: 1 1 300px;
+}
+
+.patron__text h3 {
+  margin-bottom: 0.2rem;
+  font-size: 1.3rem;
+}
+
+.patron__text .patron__role {
+  color: var(--colour-grey-mid);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-md);
+}
+
+.patron__text p {
+  margin-bottom: var(--space-sm);
+}
+
+.patron__text .patron__awards {
+  font-size: 0.8rem;
+  color: var(--colour-grey-mid);
+}
+
+.patron__image {
+  /* Shrinks naturally with the flex container, never exceeds 727px.
+     min-width: 0 allows it to compress below its flex-basis on small screens. */
+  flex: 1 1 400px;
+  max-width: 727px;
+  min-width: 0;
+}
+
+.patron__image img {
+  width: 100%;
+  /* 727x586 ratio always maintained as the image resizes */
+  aspect-ratio: 727 / 586;
+  object-fit: cover;
+  display: block;
+}
+
+/* -----------------------------------------------------------------------------
+   13. EVENTS PAGE — HERO HEADER
+   Olive/dark green background with white and orange text.
+   ----------------------------------------------------------------------------- */
+.page-hero {
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.page-hero--olive {
+  background: var(--colour-olive);
+  color: var(--colour-white);
+}
+
+.page-hero--teal {
+  background: var(--colour-teal);
+  color: var(--colour-white);
+}
+
+.page-hero .text-italic-accent {
+  color: var(--colour-orange);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.page-hero h1 {
+  color: var(--colour-orange);
+  margin-bottom: var(--space-md);
+}
+
+.page-hero p {
+  max-width: 680px;
+  opacity: 0.92;
+}
+
+/* -----------------------------------------------------------------------------
+   14. EVENTS — "WHAT'S ON" UPCOMING EVENTS
+   Yellow/cream background section.
+   ----------------------------------------------------------------------------- */
+.section-whats-on {
+  background: var(--colour-cream);
+  padding: var(--space-xl) 0;
+}
+
+.section-whats-on h2 {
+  color: var(--colour-teal);
+  margin-bottom: var(--space-lg);
+}
+
+/* Two-column grid for upcoming event cards */
+.events-grid {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Each event card */
+.event-card {
+  flex: 1 1 300px;
+  background: var(--colour-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.event-card__img-wrap img {
+  width: 100%;
+  /* 575x463 ratio locked — height scales proportionally with width */
+  aspect-ratio: 575 / 463;
+  object-fit: cover;
+  transition: transform var(--transition-mid);
+}
+
+.event-card:hover .event-card__img-wrap img {
+  /* Subtle zoom on hover for interactivity */
+  transform: scale(1.03);
+}
+
+/* Coloured category tag overlaid on image top-right */
+.event-card__tag {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  color: var(--colour-white);
+}
+
+.event-card__tag--tour    { background: var(--colour-tag-tour); }
+.event-card__tag--lecture { background: var(--colour-tag-lecture); }
+.event-card__tag--talk    { background: var(--colour-tag-talk); }
+.event-card__tag--seminar { background: var(--colour-tag-seminar); }
+
+.event-card__body {
+  padding: var(--space-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card__body h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+}
+
+/* Meta info: location, date, time — with icon spacing */
+.event-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--colour-grey-mid);
+}
+
+.event-card__meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.event-card__meta-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  fill: var(--colour-grey-mid);
+}
+
+.event-card__desc {
+  font-size: 0.85rem;
+  color: var(--colour-grey-mid);
+  flex: 1;
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.event-card .btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* -----------------------------------------------------------------------------
+   15. EVENTS — PAST EVENTS (white section with three-column grid)
+   ----------------------------------------------------------------------------- */
+.section-past-events {
+  background: var(--colour-white);
+  padding: var(--space-xl) 0;
+}
+
+.section-past-events h2 {
+  color: var(--colour-orange);
+  margin-bottom: var(--space-lg);
+}
+
+/* Strict 3 columns x 2 rows grid for past events */
+.past-events-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* Cards fill their grid cell naturally */
+.past-events-grid .event-card {
+  max-width: 100%;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .past-events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .past-events-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* -----------------------------------------------------------------------------
+   16. EVENTS — BOTTOM PHOTO STRIP (decorative)
+   ----------------------------------------------------------------------------- */
+.events-photo-strip {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.events-photo-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay chevron button for carousel (from prototype) */
+.events-photo-strip__next {
+  position: absolute;
+  right: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.35);
+  color: var(--colour-white);
+  border: none;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* -----------------------------------------------------------------------------
+   17. ARCHITECTURE PAGE
+   ----------------------------------------------------------------------------- */
+.page-hero--architecture {
+  background: var(--colour-teal);
+  color: var(--colour-white);
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.page-hero--architecture h1 {
+  color: var(--colour-white);
+  margin-bottom: var(--space-sm);
+}
+
+.page-hero--architecture p {
+  opacity: 0.9;
+  max-width: 700px;
+}
+
+/* Architecture building listings — alternating image/text rows */
+.architecture-list {
+  padding: var(--space-xl) 0;
+}
+
+.architecture-item {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: flex-start;
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--colour-grey-light);
+  flex-wrap: wrap;
+}
+
+/* Alternate image position every other row for visual variety */
+.architecture-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.architecture-item__img {
+  /* Fixed width matching 515px prototype size — shrinks on smaller screens */
+  flex: 0 0 515px;
+  max-width: 515px;
+}
+
+.architecture-item__img img {
+  width: 100%;
+  /* 515x415 ratio locked — height scales proportionally with width */
+  aspect-ratio: 515 / 415;
+  object-fit: cover;
+  display: block;
+}
+
+.architecture-item__body {
+  flex: 1 1 300px;
+}
+
+/* Status tag: "At Risk", "Heritage Listed", etc. */
+.arch-status-tag {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: var(--space-sm);
+  color: var(--colour-white);
+  background: var(--colour-teal);
+}
+
+.arch-status-tag--risk {
+  background: #c0392b;
+}
+
+.architecture-item__body h3 {
+  margin-bottom: var(--space-sm);
+  font-size: 1.2rem;
+}
+
+.architecture-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: var(--space-sm);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--colour-grey-mid);
+}
+
+.architecture-item__meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.architecture-item__meta-item svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  fill: var(--colour-grey-mid);
+}
+
+.architecture-item__body p {
+  font-size: 0.9rem;
+  color: var(--colour-grey-mid);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.arch-learn-more {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--colour-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* -----------------------------------------------------------------------------
+   18. MEDIA PAGE — TAB NAVIGATION
+   ABC Radio / Blog Posts / Videos tabs
+   ----------------------------------------------------------------------------- */
+.media-tabs {
+  display: flex;
+  gap: 0;
+  margin: var(--space-lg) 0;
+  border-bottom: 2px solid var(--colour-grey-light);
+}
+
+.media-tab-btn {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  color: var(--colour-grey-mid);
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.media-tab-btn:hover {
+  color: var(--colour-black);
+}
+
+/* Active tab indicated by bottom border matching the section accent colour */
+.media-tab-btn[aria-selected="true"] {
+  color: var(--colour-black);
+  border-bottom-color: var(--colour-teal);
+}
+
+/* Tab panel visibility controlled by JS */
+.media-tab-panel {
+  display: none;
+}
+
+.media-tab-panel[aria-hidden="false"] {
+  display: block;
+}
+
+/* -----------------------------------------------------------------------------
+   19. MEDIA — ABC RADIO SECTION
+   Header area + episode grid
+   ----------------------------------------------------------------------------- */
+.radio-header {
+  background: var(--colour-cream);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.radio-header h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.radio-header p {
+  font-size: 0.85rem;
+  color: var(--colour-grey-mid);
+}
+
+/* Episode grid — three columns on desktop */
+.episodes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.episode-card {
+  flex: 1 1 260px;
+  max-width: 370px;
+}
+
+.episode-card__img-wrap {
+  position: relative;
+}
+
+.episode-card__img-wrap img {
+  width: 100%;
+  /* 362x271 ratio locked */
+  aspect-ratio: 362 / 271;
+  object-fit: cover;
+  display: block;
+}
+
+.episode-card__ep-label {
+  position: absolute;
+  top: var(--space-xs);
+  left: var(--space-xs);
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  background: var(--colour-teal);
+  color: var(--colour-white);
+}
+
+.episode-card__body {
+  padding: var(--space-sm) 0;
+}
+
+.episode-card__body h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.episode-card__body p {
+  font-size: 0.8rem;
+  color: var(--colour-grey-mid);
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------------------------
+   20. MEDIA — "WEBSITES YOU MIGHT LIKE" GRID
+   Nine-card link grid with visit button on each.
+   ----------------------------------------------------------------------------- */
+.section-websites {
+  background: var(--colour-teal);
+  padding: var(--space-xl) 0;
+  margin-top: var(--space-xl);
+}
+
+.section-websites h2 {
+  color: var(--colour-orange);
+  margin-bottom: var(--space-lg);
+}
+
+.websites-grid {
+  /* Strict 3-column grid — always 3 cards per row on desktop */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.website-card {
+  background: var(--colour-white);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.website-card h4 {
+  font-size: 0.85rem;
+  color: var(--colour-black);
+}
+
+.website-card p {
+  font-size: 0.78rem;
+  color: var(--colour-grey-mid);
+  flex: 1;
+  line-height: 1.4;
+}
+
+.website-card .btn {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  padding: 0.4rem 1rem;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .websites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .websites-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   21. MEDIA — BLOG POST PAGE
+   Article layout with large images and Q&A interview format.
+   ----------------------------------------------------------------------------- */
+.blog-post {
+  padding: var(--space-xl) 0;
+}
+
+.blog-post__header {
+  margin-bottom: var(--space-lg);
+}
+
+.blog-post__header h1 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.blog-post__date {
+  font-size: 0.85rem;
+  color: var(--colour-grey-mid);
+  font-family: var(--font-ui);
+}
+
+.blog-post__body p {
+  margin-bottom: var(--space-md);
+  max-width: 720px;
+}
+
+.blog-post__body img {
+  width: 100%;
+  margin: var(--space-md) 0;
+}
+
+/* Q&A interview styling */
+.blog-post__qa {
+  margin: var(--space-md) 0;
+  max-width: 720px;
+}
+
+.blog-post__qa-q {
+  font-weight: 700;
+  font-family: var(--font-ui);
+  color: var(--colour-teal);
+  margin-bottom: 0.4rem;
+}
+
+.blog-post__qa-a {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-sm);
+  border-left: 3px solid var(--colour-grey-light);
+}
+
+/* -----------------------------------------------------------------------------
+   22. MEDIA — VIDEOS TAB
+   Video thumbnails in a loose column layout.
+   ----------------------------------------------------------------------------- */
+.video-section {
+  margin-bottom: var(--space-xl);
+}
+
+.video-section h3 {
+  margin-bottom: var(--space-sm);
+}
+
+.video-section p {
+  font-size: 0.9rem;
+  color: var(--colour-grey-mid);
+  margin-bottom: var(--space-md);
+}
+
+/* Default thumbnail — used in the single large video sections */
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+  /* 976x665 for the large standalone videos */
+  max-width: 976px;
+  width: 100%;
+  margin-bottom: var(--space-xs);
+  /* Centre the large thumbnail within the section */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  /* 976x665 ratio */
+  aspect-ratio: 976 / 665;
+  object-fit: cover;
+  display: block;
+}
+
+/* Play button overlay */
+.video-thumbnail__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.25);
+  transition: background var(--transition-fast);
+}
+
+.video-thumbnail:hover .video-thumbnail__play {
+  background: rgba(0,0,0,0.4);
+}
+
+.video-thumbnail__play svg {
+  width: 56px;
+  height: 56px;
+  fill: var(--colour-white);
+}
+
+.video-meta {
+  font-size: 0.78rem;
+  color: var(--colour-grey-mid);
+  font-family: var(--font-ui);
+  margin-top: 0.3rem;
+  /* Centre the caption under the large videos */
+  text-align: center;
+}
+
+/* Row of video grids — Growing Up Modern panel, strict 3x2 grid */
+.video-grid-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+/* Each cell: thumbnail + caption stacked */
+.video-grid-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grid thumbnails: 576x441 ratio, fills the cell */
+.video-grid-cell .video-thumbnail {
+  max-width: 100%;
+  margin: 0;
+}
+
+.video-grid-cell .video-thumbnail img {
+  aspect-ratio: 576 / 441;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Caption sits below the thumbnail, left aligned */
+.video-grid-cell .video-meta {
+  text-align: left;
+  margin-top: 0.4rem;
+}
+
+/* Tablet: 2 columns */
+@media (max-width: 900px) {
+  .video-grid-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .video-grid-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   23. FORMS (Event Registration & Contact)
+   Light-blue card. Fields stacked in a single flex column — tight gaps.
+   ----------------------------------------------------------------------------- */
+.form-page {
+  padding: var(--space-xl) 0;
+}
+
+.form-card {
+  background: var(--colour-light-blue);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.form-card h1 {
+  color: var(--colour-teal);
+  margin-bottom: var(--space-md);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+/* Single flex column — all fields stack with a small consistent gap.
+   No margin-bottom on rows, no flex-wrap complications. */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+/* On desktop, two fields can sit side by side in a row */
+.form-row {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+label {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--colour-teal);
+  letter-spacing: 0.03em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background: var(--colour-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--colour-black);
+  outline: none;
+  transition: box-shadow var(--transition-fast);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px var(--colour-teal);
+}
+
+/* Textarea — slightly less rounded so tall boxes look natural.
+   Auto-resizes via JS. Enter key adds new line (not submit). */
+textarea {
+  resize: none;
+  min-height: 52px;
+  overflow: hidden;
+  border-radius: 26px;
+}
+
+/* Checkbox row */
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--colour-teal);
+  border-radius: 3px;
+  cursor: pointer;
+  accent-color: var(--colour-teal);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.form-checkbox label {
+  font-size: 0.9rem;
+  color: var(--colour-teal);
+}
+
+/* Submit button — centred */
+.form-submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.form-submit-wrap .btn {
+  color: var(--colour-black);
+  border-color: var(--colour-black);
+  padding: 0.8rem 2.5rem;
+  font-size: 0.9rem;
+}
+
+.form-submit-wrap .btn:hover {
+  background: var(--colour-black);
+  color: var(--colour-white);
+}
+
+/* On mobile, rows collapse to single column */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .form-card {
+    padding: var(--space-md);
+    margin: 0 var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .form-card h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   24. SUCCESS PAGES (event registration + contact)
+   ----------------------------------------------------------------------------- */
+.success-card {
+  background: var(--colour-light-blue);
+  border-radius: 12px;
+  padding: var(--space-xxl) var(--space-xl);
+  max-width: 860px;
+  margin: var(--space-xl) auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.success-card h1 {
+  color: var(--colour-teal);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.success-card p {
+  font-size: 1.2rem;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+/* -----------------------------------------------------------------------------
+   25. DESKTOP SIZING UPGRADES
+   Larger hero, bigger team photos and text for large screens.
+   ----------------------------------------------------------------------------- */
+
+/* -----------------------------------------------------------------------------
+   LARGE SCREEN / TV (min-width: 2200px)
+   Scales up for 4K and TV displays. Laptop screens are unaffected.
+   The html font-size increase causes all rem values to grow proportionally.
+   ----------------------------------------------------------------------------- */
+@media (min-width: 2200px) {
+  html {
+    font-size: 20px;
+  }
+
+  :root {
+    --max-width:  1800px;
+    --nav-height: 90px;
+  }
+
+  .hero {
+    height: clamp(500px, 45vw, 1000px);
+  }
+
+  .site-nav__logo-text {
+    font-size: 1.3rem;
+  }
+
+  .site-nav__logo-img {
+    width: 52px;
+  }
+
+  .site-nav__links a {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .team-card__img {
+    width: 340px;
+    height: 340px;
+  }
+
+  .architecture-item__img {
+    flex: 0 0 640px;
+    max-width: 640px;
+  }
+
+  .footer-brand__logo {
+    font-size: 2.4rem;
+  }
+}
+
+@media (min-width: 3200px) {
+  html {
+    font-size: 26px;
+  }
+
+  :root {
+    --max-width:  2400px;
+    --nav-height: 110px;
+  }
+
+  .hero {
+    height: clamp(700px, 40vw, 1200px);
+  }
+}
+
+/* Hero taller on large screens — more immersive */
+.hero {
+  height: clamp(380px, 60vw, 680px);
+}
+
+/* Team card text larger on desktop */
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Team cards wider on desktop */
+.team-card {
+  flex: 1 1 260px;
+  max-width: 360px;
+}
+
+/* About section headline bigger */
+.section-about h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  margin-bottom: var(--space-md);
+}
+
+/* Event card images use aspect-ratio — no fixed height needed */
+
+/* -----------------------------------------------------------------------------
+   26. RESPONSIVE — TABLET  (max-width: 900px)
+   Two-column layouts collapse to single column or two tighter columns.
+   ----------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  :root {
+    --space-xl: 3rem;
+  }
+
+  /* Team cards: two per row at tablet */
+  .team-card {
+    flex: 1 1 200px;
+    max-width: 340px;
+  }
+
+  .team-card__img {
+    height: 240px;
+  }
+
+  /* Architecture items: keep side-by-side at tablet, only stack at 600px */
+  .architecture-item__img {
+    flex: 0 0 320px;
+    max-width: 320px;
+  }
+
+  .episode-card {
+    flex: 1 1 220px;
+  }
+
+  /* Event card images slightly shorter */
+}
+
+/* -----------------------------------------------------------------------------
+   27. RESPONSIVE — MOBILE  (max-width: 600px)
+   Based on mobile prototype screens. Single column throughout.
+   Hamburger nav, stacked forms, large footer wordmark.
+   ----------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  :root {
+    --space-xl:  2.5rem;
+    --space-lg:  2rem;
+    --space-md:  1.2rem;
+  }
+
+  /* ---- HERO ---- */
+  /* Shorter hero on mobile — still impactful */
+  .hero {
+    height: 240px;
+  }
+
+  /* ---- ABOUT SECTION ---- */
+  .section-about h1 {
+    font-size: 2rem;
+  }
+
+  .section-about .text-italic-accent {
+    font-size: 1.1rem;
+  }
+
+  /* ---- EVENTS TEASER ---- */
+  /* Stack text above button on mobile */
+  .events-teaser__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  /* ---- TEAM ---- */
+  /* Single column on mobile, square image shrinks to fit screen width */
+  .team-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .team-card__img {
+    /* On mobile, cap the square at full width so it doesn't overflow */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-position: center top;
+  }
+
+  .team-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .team-card p {
+    font-size: 0.95rem;
+  }
+
+  /* ---- PATRON ---- */
+  /* Text first then image stacked vertically */
+  .patron__inner {
+    flex-direction: column;
+  }
+
+  .patron__image {
+    flex: unset;
+    max-width: 100%;
+  }
+
+  /* Patron image keeps 727x586 ratio on mobile, full width */
+  .patron__image img {
+    width: 100%;
+    aspect-ratio: 727 / 586;
+    height: auto;
+  }
+
+  /* ---- EVENT CARDS ---- */
+  /* Upcoming events: full width single column on mobile */
+  .event-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+
+  /* ---- ARCHITECTURE ---- */
+  /* Below 600px: image stacks above text, no alternating layout */
+  .architecture-item,
+  .architecture-item:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .architecture-item__img {
+    flex: unset;
+    max-width: 100%;
+  }
+
+  /* ---- MEDIA / EPISODES ---- */
+  .episode-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  /* Tabs scroll horizontally if labels are long */
+  .media-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .media-tab-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* ---- SUCCESS PAGES ---- */
+  /* Card fills most of screen with generous vertical padding */
+  .success-card {
+    padding: 4rem var(--space-md);
+    margin: var(--space-md) var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .success-card h1 {
+    font-size: 3.5rem;
+  }
+
+  .success-card p {
+    font-size: 1.1rem;
+  }
+
+  /* ---- FOOTER ---- */
+  /* Stack all columns, large bold wordmark at top matching prototype */
+  .site-footer__inner {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  /* Large bold wordmark on mobile footer */
+  .footer-brand__logo {
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer-brand__copy {
+    font-size: 0.85rem;
+  }
+
+  /* Footer section headings more prominent on mobile */
+  .footer-contact h4,
+  .footer-pages h4,
+  .footer-partners h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-pages a,
+  .footer-partners a {
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+
+  /* Copyright line at very bottom, separated by a border */
+  .site-footer {
+    padding-bottom: var(--space-lg);
+  }
+
+  /* Page hero sections — smaller heading on mobile */
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .page-hero p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* =========================================================
+   IMAGE POSITION OVERRIDES
+   Per-image object-position adjustments to keep subjects
+   correctly framed within their fixed aspect-ratio crops.
+   ========================================================= */
+
+/* Hero slides — slides 1, 2 and 7 need the view shifted */
+.hero__slide--pos-left img {
+  object-position: 40% 80%;
+}
+
+/* Team card — Edwina: subject sits left of centre */
+.team-card__img--edwina {
+  object-position: 20% top;
+}
+
+/* Team card — Rachel: subject sits right of centre */
+.team-card__img--rachel {
+  object-position: 74% top;
+}
+
+/* =========================================================
+   EPISODE CARD LINKS
+   Links inside episode card headings inherit colour and
+   show an underline to signal they are clickable.
+   ========================================================= */
+.episode-card__title-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* =========================================================
+   BLOG SECTION (media.html)
+   Wrapper padding and article spacing for the blog listing.
+   ========================================================= */
+.blog-listing {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.blog-listing__item {
+  padding-bottom: 2rem;
+}
+
+.blog-listing__date {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--colour-grey-mid);
+  margin-bottom: 0.4rem;
+}
+
+.blog-listing__heading {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.blog-listing__link {
+  color: var(--colour-black);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-listing__summary {
+  font-size: 0.9rem;
+  color: var(--colour-grey-mid);
+  max-width: 640px;
+}
+
+/* =========================================================
+   VIDEO SECTION (media.html)
+   Container top padding and video thumbnail link/wrapper.
+   ========================================================= */
+.video-section-pad {
+  padding-top: 2.5rem;
+}
+
+.video-link {
+  display: block;
+  text-decoration: none;
+}
+
+.video-thumbnail--featured {
+  max-width: 680px;
+}
+
+/* =========================================================
+   MEDIA-BLOG PAGE
+   Tab bar overrides, article heading, caption, back link,
+   and external links within blog body copy.
+   ========================================================= */
+.media-tabs--blog {
+  margin-top: 1.5rem;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.media-tab-btn--inactive {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.media-tab-btn--active {
+  color: var(--colour-white);
+  border-bottom-color: var(--colour-orange);
+}
+
+.blog-post__article-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 0.4rem;
+}
+
+.blog-post__caption {
+  font-size: 0.8rem;
+  color: var(--colour-grey-mid);
+  margin-top: -0.8rem;
+  margin-bottom: var(--space-md);
+}
+
+.blog-post__back-link-wrap {
+  margin-top: 3rem;
+}
+
+.blog-post__back-link {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--colour-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-post__external-link {
+  color: var(--colour-teal);
+  text-decoration: underline;
+}

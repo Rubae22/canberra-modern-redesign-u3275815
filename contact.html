@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Canberra Modern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fustat: Regular (400) for body/subtitles, ExtraBold (800) for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- SITE NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="Canberra Modern home">
+        <!-- Replace logo.png/svg in assets/images/ with your own logo file -->
+        <img class="site-nav__logo-img" src="assets/images/logo.svg" alt="Canberra Modern logo" />
+        <span class="site-nav__logo-text">Canberra<br>Modern</span>
+      </a>
+      <button class="site-nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="site-nav__close" aria-label="Close navigation menu">&times;</button>
+      <ul class="site-nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="media.html">Media</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- =========================================================
+         CONTACT FORM
+         Light-blue card matching prototype Image 9.
+         JS intercepts submit and redirects to contact-success.html.
+         ========================================================= -->
+    <section class="form-page" aria-labelledby="contact-form-heading">
+      <div class="container">
+
+        <div class="form-card">
+          <h1 id="contact-form-heading">Contact Us</h1>
+
+          <!-- id used by JS to intercept submit -->
+          <form id="contact-form" novalidate>
+
+            <div class="form-fields">
+              <!-- Row 1: Name + Email side by side on desktop -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Name</label>
+                  <input type="text" id="contact-name" name="name" autocomplete="name" required placeholder="" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email</label>
+                  <input type="email" id="contact-email" name="email" autocomplete="email" required placeholder="" />
+                </div>
+              </div>
+
+              <!-- Message textarea — full width.
+                   Enter key adds a new line (not submit). Only the Submit button submits. -->
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  required
+                  placeholder=""></textarea>
+              </div>
+            </div>
+
+            <!-- Newsletter opt-in checkbox -->
+            <div class="form-checkbox">
+              <input type="checkbox" id="contact-newsletter" name="newsletter" />
+              <label for="contact-newsletter">I want to receive updates and newsletter via email</label>
+            </div>
+
+            <!-- Submit button — centred -->
+            <div class="form-submit-wrap">
+              <button type="submit" class="btn btn--dark">Submit</button>
+            </div>
+
+          </form>
+
+        </div><!-- /form-card -->
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer__inner">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">Canberra<br>Modern</p>
+        <p class="footer-brand__copy">&copy; 2026 Canberra Modern.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Contact</h4>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/canberramodern/" aria-label="Canberra Modern on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/canberra_modern/" aria-label="Canberra Modern on Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          </a>
+        </div>
+        <a href="contact.html">Message us</a>
+      </div>
+      <nav class="footer-pages" aria-label="Footer page links">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="media.html">Media</a></li>
+        </ul>
+      </nav>
+      <div class="footer-partners">
+        <h4>Partners</h4>
+        <ul role="list">
+          <li><a href="https://unihouse.anu.edu.au/" target="_blank" rel="noopener">University House</a></li>
+          <li><a href="https://www.design.org.au/" target="_blank" rel="noopener">Design Institute of Australia</a></li>
+          <li><a href="https://australia.icomos.org/" target="_blank" rel="noopener">Australia ICOMOS</a></li>
+          <li><a href="https://gml.com.au/" target="_blank" rel="noopener">GML Heritage</a></li>
+          <li><a href="https://www.themilldesign.com.au/" target="_blank" rel="noopener">The Mill Architecture and Design</a></li>
+          <li><a href="https://www.architecture.com.au/act-chapter" target="_blank" rel="noopener">The Australian Institute of Architects</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Required UC assessment footer note -->
+    <p class="footer-assessment-note">
+      This website was produced by students in the Faculty of Arts &amp; Design,
+      University of Canberra, 2026.
+    </p>
+
+  </footer>
+
+  <script src="assets/js/javascript.js"></script>
+</body>
+</html>

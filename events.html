@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — Canberra Modern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fustat: Regular (400) for body/subtitles, ExtraBold (800) for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- SITE NAVIGATION — same on every page -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="Canberra Modern home">
+        <!-- Replace logo.png/svg in assets/images/ with your own logo file -->
+        <img class="site-nav__logo-img" src="assets/images/logo.svg" alt="Canberra Modern logo" />
+        <span class="site-nav__logo-text">Canberra<br>Modern</span>
+      </a>
+      <button class="site-nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="site-nav__close" aria-label="Close navigation menu">&times;</button>
+      <ul class="site-nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" aria-current="page">Events</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="media.html">Media</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- =========================================================
+         EVENTS PAGE HERO
+         Olive/dark-green background.
+         ========================================================= -->
+    <header class="page-hero page-hero--olive" aria-labelledby="events-page-heading">
+      <div class="container">
+        <em class="text-italic-accent">Conservation Through Participation</em>
+        <h1 id="events-page-heading">Upcoming Events</h1>
+        <p>
+          Join us for tours, lectures, workshops and social gatherings celebrating
+          Canberra's mid and late twentieth century architecture.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- =========================================================
+         WHAT'S ON — UPCOMING EVENTS
+         Cream background, two-column card grid.
+         ========================================================= -->
+    <section class="section-whats-on" aria-labelledby="whats-on-heading">
+      <div class="container">
+        <h2 id="whats-on-heading">What's On</h2>
+
+        <div class="events-grid" role="list">
+
+          <!-- Event Card 1 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/event-griffith-bus-tour.jpg" alt="Map of Canberra's Griffith suburb" />
+              <span class="event-card__tag event-card__tag--tour">Tour</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Architectural Bus Tour: Griffith Plans</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <!-- Location icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Tour, Canberra</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <!-- Calendar icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>March 8–10, 2026</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <!-- Clock icon -->
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>10:00 AM – 4:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                Explore Griffin's Canberra through a guided bus tour and exclusive cultural experiences,
+                including rare archival displays and insights into the original city plans, celebrating
+                Walter Burley Griffin's 150th anniversary.
+              </p>
+              <a href="event-register.html" class="btn btn--dark">Register Now</a>
+            </div>
+          </article>
+
+          <!-- Event Card 2 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/event-golden-age-lecture.jpg" alt="Lecture theatre at the National Library of Australia" />
+              <span class="event-card__tag event-card__tag--lecture">Lecture</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Lecture: The Golden Age of Canberra Design</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>National Library of Australia</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>April 18, 2026</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>6:30 PM – 8:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                Renowned architect Dr. Sarah Mitchell discusses the innovative design principles that
+                shaped Canberra in the 1960s and 1970s.
+              </p>
+              <a href="event-register.html" class="btn btn--dark">Register Now</a>
+            </div>
+          </article>
+
+        </div><!-- /events-grid -->
+      </div>
+    </section><!-- /section-whats-on -->
+
+
+    <!-- =========================================================
+         PAST EVENTS
+         White background, three-column grid.
+         ========================================================= -->
+    <section class="section-past-events" aria-labelledby="past-events-heading">
+      <div class="container">
+        <h2 id="past-events-heading">Past Events</h2>
+
+        <div class="past-events-grid" role="list">
+
+          <!-- Past event 1 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/past-event-infrastructure.jpg" alt="Canberra dam and infrastructure" />
+              <span class="event-card__tag event-card__tag--tour">Tour</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Supporting Canberra's Modern: Engineering &amp; Infrastructure</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>Tour, Canberra</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>November 2, 2024</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>10:00 AM – 4:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                Discover the hidden systems that keep Canberra running on this guided bus tour of
+                key mid-century infrastructure sites. Explore bridges, dams and urban networks with
+                expert insights, revealing the innovation behind the capital's design.
+              </p>
+            </div>
+          </article>
+
+          <!-- Past event 2 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/past-event-kids-workshop.jpg" alt="Children making models at a workshop" />
+              <span class="event-card__tag event-card__tag--seminar">Workshop</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Model Modern: Kids Modern Workshop</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>The Mill, Canberra</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>November 3, 2024</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>10:00 AM – 11:30 AM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                A hands-on workshop for young creatives to explore architectural model-making using
+                recycled materials.
+              </p>
+            </div>
+          </article>
+
+          <!-- Past event 3 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/past-event-iwan.jpg" alt="Exterior of a modernist Canberra building" />
+              <span class="event-card__tag event-card__tag--talk">Talk</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Talk &amp; Book Launch: The Architecture of Iwan Iwanoff</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>National Library of Australia, Canberra</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>November 4, 2024</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>3:30 PM – 5:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                An engaging talk celebrating the publication on architect Iwan Iwanoff, exploring
+                his distinctive body of work and lasting influence through stories, images and expert insights.
+              </p>
+            </div>
+          </article>
+
+          <!-- Past event 4 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/past-event-spectres.jpg" alt="Modernist building facade" />
+              <span class="event-card__tag event-card__tag--seminar">Exhibition</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Spectres of Architecture in Canberra</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>2A Mugga Way, Red Hill ACT</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>April 19–26, 2024</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>10:00 AM – 4:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                An evocative exhibition bringing Canberra's lost architectural heritage to life through
+                photography, drawings, models and digital projections.
+              </p>
+            </div>
+          </article>
+
+          <!-- Past event 5 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/past-event-derek.jpg" alt="Derek Wrigley in his workshop" />
+              <span class="event-card__tag event-card__tag--lecture">Lecture</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Derek Wrigley: A Designer in All Senses of the Word</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>ACT Heritage Library, Fyshwick</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>April 16, 2024</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>6:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                A deep dive into the life and work of Derek Wrigley, exploring his multidisciplinary
+                design legacy and lasting impact on Canberra's built environment.
+              </p>
+            </div>
+          </article>
+
+          <!-- Past event 6 -->
+          <article class="event-card" role="listitem">
+            <div class="event-card__img-wrap">
+              <img src="assets/images/past-event-manning-clark.jpg" alt="Manning Clark House study" />
+              <span class="event-card__tag event-card__tag--tour">Tour</span>
+            </div>
+            <div class="event-card__body">
+              <h3>Tour: Manning Clark House</h3>
+              <ul class="event-card__meta" aria-label="Event details">
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  <span>17 Tasmania Circle, Forrest, ACT</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                  <span>Various dates, 2024</span>
+                </li>
+                <li class="event-card__meta-item">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+                  <span>10:00 AM – 4:00 PM</span>
+                </li>
+              </ul>
+              <p class="event-card__desc">
+                A rare opportunity to visit the Robin Boyd-designed home of Manning Clark, including
+                access to the study where The History of Australia was written.
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /past-events-grid -->
+      </div>
+    </section><!-- /section-past-events -->
+
+
+    <!-- =========================================================
+         PHOTO STRIP
+         Decorative full-width image at the bottom of the page.
+         ========================================================= -->
+    <div class="events-photo-strip" aria-hidden="true">
+      <img src="assets/images/events-strip-photo.jpg" alt="" />
+    </div>
+
+  </main>
+
+
+  <!-- SITE FOOTER — same on every page -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer__inner">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">Canberra<br>Modern</p>
+        <p class="footer-brand__copy">&copy; 2026 Canberra Modern.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Contact</h4>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/canberramodern/" aria-label="Canberra Modern on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/canberra_modern/" aria-label="Canberra Modern on Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          </a>
+        </div>
+        <a href="contact.html">Message us</a>
+      </div>
+      <nav class="footer-pages" aria-label="Footer page links">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="media.html">Media</a></li>
+        </ul>
+      </nav>
+      <div class="footer-partners">
+        <h4>Partners</h4>
+        <ul role="list">
+          <li><a href="https://unihouse.anu.edu.au/" target="_blank" rel="noopener">University House</a></li>
+          <li><a href="https://www.design.org.au/" target="_blank" rel="noopener">Design Institute of Australia</a></li>
+          <li><a href="https://australia.icomos.org/" target="_blank" rel="noopener">Australia ICOMOS</a></li>
+          <li><a href="https://gml.com.au/" target="_blank" rel="noopener">GML Heritage</a></li>
+          <li><a href="https://www.themilldesign.com.au/" target="_blank" rel="noopener">The Mill Architecture and Design</a></li>
+          <li><a href="https://www.architecture.com.au/act-chapter" target="_blank" rel="noopener">The Australian Institute of Architects</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Required UC assessment footer note -->
+    <p class="footer-assessment-note">
+      This website was produced by students in the Faculty of Arts &amp; Design,
+      University of Canberra, 2026.
+    </p>
+
+  </footer>
+
+  <script src="assets/js/javascript.js"></script>
+</body>
+</html>

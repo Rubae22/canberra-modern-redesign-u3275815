@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture — Canberra Modern</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fustat: Regular (400) for body/subtitles, ExtraBold (800) for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- SITE NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__logo" aria-label="Canberra Modern home">
+        <!-- Replace logo.png/svg in assets/images/ with your own logo file -->
+        <img class="site-nav__logo-img" src="assets/images/logo.svg" alt="Canberra Modern logo" />
+        <span class="site-nav__logo-text">Canberra<br>Modern</span>
+      </a>
+      <button class="site-nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="site-nav__close" aria-label="Close navigation menu">&times;</button>
+      <ul class="site-nav__links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="architecture.html" aria-current="page">Architecture</a></li>
+        <li><a href="media.html">Media</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- =========================================================
+         ARCHITECTURE PAGE HERO
+         Teal background with white headline + intro.
+         ========================================================= -->
+    <header class="page-hero--architecture" aria-labelledby="arch-page-heading">
+      <div class="container">
+        <h1 id="arch-page-heading">Canberra's Modern Architecture</h1>
+        <p>
+          Exploring the city's significant mid and late twentieth-century buildings.
+          Some face threats from demolition or inappropriate alterations — your
+          advocacy can make a difference.
+        </p>
+      </div>
+    </header>
+
+
+    <!-- =========================================================
+         ARCHITECTURE LISTINGS
+         Alternating image/text rows for each building.
+         Even-numbered items flip the layout (image on right).
+         ========================================================= -->
+    <section class="architecture-list" aria-label="Architecture listings">
+      <div class="container">
+
+        <!-- Building 1: Churchill House -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-churchill-house.jpg" alt="Churchill House exterior" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag arch-status-tag--risk">At Risk</span>
+            <h3>Churchill House</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>220 Northbourne Ave, Braddon</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1969</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Robin Boyd</span>
+              </li>
+            </ul>
+            <p>
+              Designed by prominent Australian architect Robin Boyd, Churchill House is considered
+              one of the most important modernist buildings in Canberra. It currently faces threats
+              of demolition and inappropriate alterations.
+            </p>
+            <a href="https://churchillhouse.shaneducksbury.com/history" target="_blank" rel="noopener" class="arch-learn-more">Find out more about the campaign to save it &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 2: Callam Offices -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-callam-offices.jpg" alt="Callam Offices exterior" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Callam Offices</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Callam Street, Woden</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1971</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>John Andrews</span>
+              </li>
+            </ul>
+            <p>
+              A striking example of brutalist government architecture by architect John Andrews.
+              The bold geometric forms and exposed concrete reflect the confident modernism of
+              Canberra's expansion during the 1970s.
+            </p>
+            <a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-callam-offices/104008886" target="_blank" rel="noopener" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 3: Civic Square -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-civic-square.jpg" alt="Civic Square Canberra" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag arch-status-tag--risk">At Risk</span>
+            <h3>Civic Square</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>London Circuit, Canberra City</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1963</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Nominated Architect: Various</span>
+              </li>
+            </ul>
+            <p>
+              The civic heart of Canberra City, Civic Square is an important gathering space
+              for the community. Its modernist paving and surrounding buildings create a
+              distinctive urban character that is under ongoing development pressure.
+            </p>
+            <a href="https://www.gpsmycity.com/attractions/civic-square-263.html" target="_blank" rel="noopener" class="arch-learn-more">Find out more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 4: Colonial Mutual Building -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-colonial-mutual.jpg" alt="Colonial Mutual Building facade" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag arch-status-tag--risk">At Risk</span>
+            <h3>Colonial Mutual Building</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>City Walk, Canberra City</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1968</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Col &amp; Owen &amp; Bard, Rigpon</span>
+              </li>
+            </ul>
+            <p>
+              This building played a vital role in shaping Canberra's commercial centre in
+              the post-war period. Its distinctive curtain wall facade is among the finest
+              examples of commercial modernism in the ACT and faces redevelopment threats.
+            </p>
+            <a href="https://archivemodernarchitecture.tumblr.com/post/164787778526/colonial-mutual-building-canberra-australia" target="_blank" rel="noopener" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 5: Torrens Town Houses -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-torrens-townhouses.jpg" alt="Torrens Town Houses exterior" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Torrens Town Houses and Shopping Complex</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Masson Street, Torrens</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1965</span>
+              </li>
+            </ul>
+            <p>
+              An innovative integration of residential and commercial use, the Torrens
+              development was a pioneering example of mixed-use planning in Canberra's
+              post-war suburban expansion.
+            </p>
+            <a href="https://www.abc.net.au/listen/programs/canberra-mornings/architecture-tour-torrens-shopping-centre/104038258" target="_blank" rel="noopener" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 6: ANZAC Park East & West -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-anzac-park.jpg" alt="ANZAC Park East offices" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>ANZAC Park East and West (Postal Buildings)</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Anzac Park, Reid/Campbell</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1959</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Commonwealth Department of Works</span>
+              </li>
+            </ul>
+            <p>
+              These matching office blocks on either side of Anzac Park are a defining element
+              of Canberra's parliamentary triangle precinct, representing the ordered post-war
+              vision for Australia's capital.
+            </p>
+            <a href="https://www.canberratimes.com.au/story/6039198/anzac-park-east-and-west-to-be-demolished-after-sale/" target="_blank" rel="noopener" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 7: National Library of Australia -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-national-library.jpg" alt="National Library of Australia" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>National Library of Australia</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Parkes Place, Parkes</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1968</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Bunning and Madden</span>
+              </li>
+            </ul>
+            <p>
+              One of Canberra's most celebrated buildings, the National Library combines a
+              classical colonnade with modernist detailing in travertine marble. It anchors
+              the southern shore of Lake Burley Griffin.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 8: University House -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-university-house.jpg" alt="University House ANU" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>University House</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Balmain Crescent, Acton</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1954</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Brian Lewis</span>
+              </li>
+            </ul>
+            <p>
+              The first major building completed at the Australian National University, University
+              House reflects the aspirations of post-war academic life in Australia. Its garden
+              courtyards and modernist interiors are intact and significant.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 9: Giralang Primary School -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-giralang-school.jpg" alt="Giralang Primary School" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag arch-status-tag--risk">At Risk</span>
+            <h3>Giralang Primary School</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Namatjira Drive, Giralang</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1975</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Smith Taggart</span>
+              </li>
+            </ul>
+            <p>
+              This innovative school design by architects Smith Taggart pioneered open-plan
+              learning environments in Australia. The campus layout and timber construction
+              were ahead of their time and remain largely intact.
+            </p>
+            <a href="#" class="arch-learn-more">Find out more about its future &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 10: Australian Academy of Science – The Shine Dome -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-shine-dome.jpg" alt="The Shine Dome Australian Academy of Science" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Australian Academy of Science: The Shine Dome</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Gordon Street, Acton</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1959</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Roy Grounds</span>
+              </li>
+            </ul>
+            <p>
+              Roy Grounds' iconic flying-saucer dome is one of Australia's most recognisable
+              buildings. The shell-concrete structure remains a masterpiece of engineering
+              and modernist design, and is listed on the National Heritage List.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 11: Urambi Village & Wybalena Grove -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-urambi-village.jpg" alt="Urambi Village housing co-operative" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Urambi Village &amp; Wybalena Grove</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Urambi Village, Crozier Cct, Kambah / Wybalena Grove, Cook</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1974</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Michael Dysart</span>
+              </li>
+            </ul>
+            <p>
+              Innovative housing co-operatives showcasing progressive community-focused residential design.
+              These developments demonstrate how mid-century planning principles created sustainable,
+              people-centred neighbourhoods.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 12: School of Music -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-school-of-music.jpg" alt="ANU School of Music, Childers Street" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>School of Music</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Childers Street, Acton</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1976</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Daryl Jackson &amp; Evan Walker</span>
+              </li>
+            </ul>
+            <p>
+              A purpose-built facility for music education demonstrating the late twentieth century
+              commitment to cultural infrastructure and acoustic design excellence.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 13: Edmund Barton Building -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-edmund-barton.jpg" alt="Edmund Barton Building, Kings Avenue" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Edmund Barton Building</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Kings Avenue, Barton</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1973</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Harry Seidler</span>
+              </li>
+            </ul>
+            <p>
+              A striking example of Harry Seidler's architectural mastery, featuring his signature
+              sculptural concrete forms and rigorous geometric design principles.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 14: Australian War Memorial Annexe -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-war-memorial-annexe.jpg" alt="Australian War Memorial Annexe, Callan Street" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag arch-status-tag--risk">At Risk</span>
+            <h3>Australian War Memorial Annexe</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Callan St, Mitchell</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1979</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Enrico Taglietti</span>
+              </li>
+            </ul>
+            <p>
+              Another masterpiece by Enrico Taglietti, demonstrating his unique approach to brutalist
+              architecture with organic sculptural forms and thoughtful integration with the landscape.
+            </p>
+            <a href="#" class="arch-learn-more">Find out more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 15: The Benjamin House (The Round House) -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-benjamin-house.jpg" alt="The Benjamin House, 10 Gawler Crescent Deakin" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>The Benjamin House (The Round House)</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>10 Gawler Cres, Deakin</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1959</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Alex Jelinek</span>
+              </li>
+            </ul>
+            <p>
+              An innovative circular residence showcasing experimental mid-century domestic architecture.
+              A remarkable example of Canberra's adventurous residential design.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 16: Australian Institute of Architects Headquarters -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-aia-headquarters.jpg" alt="Australian Institute of Architects Headquarters, Red Hill" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Australian Institute of Architects Headquarters</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>2A Mugga Way, Red Hill</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1987</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Ancher, Mortlock, Murray and Woolley</span>
+              </li>
+            </ul>
+            <p>
+              The home of the architectural profession in Canberra, this building exemplifies the
+              modernist design principles championed by the institute itself.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 17: St Joseph's Church -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-st-josephs-church.jpg" alt="St Joseph's Church, O'Connor" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>St Joseph's Church</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Boronia Drive, O'Connor</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1971</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Kevin Curtin</span>
+              </li>
+            </ul>
+            <p>
+              A striking example of modern ecclesiastical architecture, demonstrating how mid-century
+              principles were applied to sacred spaces with bold geometric forms.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 18: Australian Parliament House -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-parliament-house.jpg" alt="Australian Parliament House, Canberra" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Australian Parliament House</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Parliament Dr, Canberra</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1988</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Mitchell, Giurgola &amp; Thorp</span>
+              </li>
+            </ul>
+            <p>
+              While completed in 1988, Parliament House represents the culmination of late twentieth
+              century architectural achievement in Canberra, integrating with the landscape in an
+              unprecedented way.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 19: Swinger Hill Housing -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-swinger-hill.jpg" alt="Swinger Hill Housing, Barnet Close" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>Swinger Hill Housing</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Barnet Close, Swinger Hill</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built from 1969</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Ian McKay and Partners</span>
+              </li>
+            </ul>
+            <p>
+              An important example of mid-century residential planning demonstrating innovative
+              approaches to medium-density housing and community design.
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Building 20: High Court of Australia -->
+        <article class="architecture-item">
+          <div class="architecture-item__img">
+            <img src="assets/images/arch-high-court.jpg" alt="High Court of Australia, Parkes Place" />
+          </div>
+          <div class="architecture-item__body">
+            <span class="arch-status-tag">Heritage Listed</span>
+            <h3>High Court of Australia</h3>
+            <ul class="architecture-item__meta" aria-label="Building details">
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Parkes Pl, Parkes</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.11-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
+                <span>Built: 1980</span>
+              </li>
+              <li class="architecture-item__meta-item">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#666" stroke-width="2"/><path d="M12 6v6l4 2"/></svg>
+                <span>Edwards, Madigan, Torzillo, Briggs</span>
+              </li>
+            </ul>
+            <p>
+              A bold example of late twentieth century public architecture. Of course, next door neighbour
+              and architect sibling — the National Gallery deserves its own mention!
+            </p>
+            <a href="#" class="arch-learn-more">Learn more &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section><!-- /architecture-list -->
+
+  </main>
+
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer__inner">
+      <div class="footer-brand">
+        <p class="footer-brand__logo">Canberra<br>Modern</p>
+        <p class="footer-brand__copy">&copy; 2026 Canberra Modern.<br>All rights reserved.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Contact</h4>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/canberramodern/" aria-label="Canberra Modern on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/canberra_modern/" aria-label="Canberra Modern on Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+          </a>
+        </div>
+        <a href="contact.html">Message us</a>
+      </div>
+      <nav class="footer-pages" aria-label="Footer page links">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="media.html">Media</a></li>
+        </ul>
+      </nav>
+      <div class="footer-partners">
+        <h4>Partners</h4>
+        <ul role="list">
+          <li><a href="https://unihouse.anu.edu.au/" target="_blank" rel="noopener">University House</a></li>
+          <li><a href="https://www.design.org.au/" target="_blank" rel="noopener">Design Institute of Australia</a></li>
+          <li><a href="https://australia.icomos.org/" target="_blank" rel="noopener">Australia ICOMOS</a></li>
+          <li><a href="https://gml.com.au/" target="_blank" rel="noopener">GML Heritage</a></li>
+          <li><a href="https://www.themilldesign.com.au/" target="_blank" rel="noopener">The Mill Architecture and Design</a></li>
+          <li><a href="https://www.architecture.com.au/act-chapter" target="_blank" rel="noopener">The Australian Institute of Architects</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- Required UC assessment footer note -->
+    <p class="footer-assessment-note">
+      This website was produced by students in the Faculty of Arts &amp; Design,
+      University of Canberra, 2026.
+    </p>
+
+  </footer>
+
+  <script src="assets/js/javascript.js"></script>
+</body>
+</html>

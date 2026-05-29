@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canberra Modern — Preserving Our Architectural Heritage</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fustat: Regular (400) for body/subtitles, ExtraBold (800) for headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- =========================================================
+       SITE NAVIGATION
+       Sticky top bar — logo left, nav links right.
+       On mobile the links collapse behind the hamburger button.
+       ========================================================= -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="site-nav__inner">
+
+      <!-- Logo: architectural sketch icon + wordmark -->
+      <a href="index.html" class="site-nav__logo" aria-label="Canberra Modern home">
+        <!-- Inline SVG logo approximating the architectural sketch in the prototype -->
+        <!-- Replace logo.png/svg in assets/images/ with your own logo file -->
+        <img class="site-nav__logo-img" src="assets/images/logo.svg" alt="Canberra Modern logo" />
+        <span class="site-nav__logo-text">Canberra<br>Modern</span>
+      </a>
+
+      <!-- Hamburger button — visible only on mobile via CSS -->
+      <button class="site-nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Primary nav links — hidden on mobile until hamburger clicked -->
+      <button class="site-nav__close" aria-label="Close navigation menu">&times;</button>
+      <ul class="site-nav__links" role="list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="architecture.html">Architecture</a></li>
+        <li><a href="media.html">Media</a></li>
+      </ul>
+
+    </div>
+  </nav><!-- /site-nav -->
+
+
+  <main>
+
+    <!-- =========================================================
+         HERO CAROUSEL
+         Full-width sliding image gallery with prev/next arrows.
+         JS in javascript.js handles the slide transitions.
+         ========================================================= -->
+    <section class="hero" aria-label="Featured images">
+      <div class="hero__slides">
+
+        <div class="hero__slide hero__slide--pos-left">
+          <img src="assets/images/hero-1.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+        <div class="hero__slide hero__slide--pos-left">
+          <img src="assets/images/hero-2.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+        <div class="hero__slide">
+          <img src="assets/images/hero-3.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+        <div class="hero__slide">
+          <img src="assets/images/hero-4.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+        <div class="hero__slide">
+          <img src="assets/images/hero-5.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+        <div class="hero__slide">
+          <img src="assets/images/hero-6.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+        <div class="hero__slide hero__slide--pos-left">
+          <img src="assets/images/hero-7.jpg" alt="Canberra modernist architecture" />
+          <span class="hero__credit">Image by Darren Bradley</span>
+        </div>
+
+      </div><!-- /hero__slides -->
+
+      <!-- Prev/next controls with accessible labels -->
+      <button class="hero__btn hero__btn--prev" aria-label="Previous image">&#8249;</button>
+      <button class="hero__btn hero__btn--next" aria-label="Next image">&#8250;</button>
+
+    </section><!-- /hero -->
+
+
+    <!-- =========================================================
+         ABOUT / INTRO SECTION
+         Teal background — headline, tagline, body copy, CTA.
+         ========================================================= -->
+    <section class="section-about" aria-labelledby="about-heading">
+      <div class="container">
+
+        <h1 id="about-heading">Preserving Our<br>Architectural Heritage</h1>
+
+        <p>
+          Canberra Modern is an annual programme of events showcasing Canberra's unique
+          mid and late twentieth century places and spaces.
+        </p>
+
+        <em class="text-italic-accent">Conservation Through Participation</em>
+
+        <p>
+          Our innovative events aim to increase awareness of Canberra's modernist character,
+          heritage and uniqueness.
+        </p>
+        <p>
+          Through event-based advocacy and engagement with the community, Canberra Modern
+          aims to promote protection and appreciation of the places which make an irreplaceable
+          contribution to Canberra's historic urban and designed cultural landscape.
+        </p>
+
+        <a href="architecture.html" class="btn btn--light">See What's at Risk</a>
+
+      </div>
+    </section><!-- /section-about -->
+
+
+    <!-- =========================================================
+         EVENTS TEASER
+         "Don't Miss Out" — brief intro + link to events page.
+         ========================================================= -->
+    <section class="section-events-teaser section-pad" aria-labelledby="events-teaser-heading">
+      <div class="container">
+        <div class="events-teaser__inner">
+
+          <div class="events-teaser__text">
+            <h2 id="events-teaser-heading">Dont Miss Out</h2>
+            <p>
+              Join us for tours, lectures, workshops and social gatherings celebrating
+              Canberra's mid and late twentieth century architecture.
+            </p>
+          </div>
+
+          <a href="events.html" class="btn btn--dark">Upcoming Events</a>
+
+        </div>
+      </div>
+    </section><!-- /section-events-teaser -->
+
+
+    <!-- =========================================================
+         OUR TEAM
+         Orange background — three team member cards.
+         ========================================================= -->
+    <section class="section-team" aria-labelledby="team-heading">
+      <div class="container">
+
+        <h2 id="team-heading">Our Team</h2>
+        <p>
+          Canberra Modern is a passionate team of heritage and design practitioners
+          who have a genuine love for the city in which they live.
+        </p>
+
+        <div class="team-grid" role="list">
+
+          <article class="team-card" role="listitem">
+           <img class="team-card__img team-card__img--edwina" src="assets/images/team-edwina.jpg" alt="Edwina Jans" />
+            <h3>Edwina Jans</h3>
+            <p>
+              Archaeologist and cultural heritage expert at GML Heritage, specialising in
+              education, communication and innovative engagement for heritage places.
+            </p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img class="team-card__img team-card__img--amy" src="assets/images/team-amy.jpg" alt="Amy Jarvis" />
+            <h3>Amy Jarvis</h3>
+            <p>
+              Heritage management and interpretation specialist at Philip Leeson Architects.
+              Churchill Fellow (2018/19). Investigating advocacy and engagement models around
+              mid-century architecture.
+            </p>
+          </article>
+
+          <article class="team-card" role="listitem">
+            <img class="team-card__img team-card__img--rachel" src="assets/images/team-rachel.jpg" alt="Rachel Jackson" />
+            <h3>Rachel Jackson</h3>
+            <p>
+              Interior designer and Principal at GML Heritage. Specialist in cultural landscape
+              assessment, heritage and sustainability. Getty Conservation Institute Scholar (2022/23).
+            </p>
+          </article>
+
+        </div><!-- /team-grid -->
+
+      </div>
+    </section><!-- /section-team -->
+
+
+    <!-- =========================================================
+         OUR PATRON
+         Text left, portrait right on desktop.
+         ========================================================= -->
+    <section class="section-patron section-pad" aria-labelledby="patron-heading">
+      <div class="container">
+
+        <h2 id="patron-heading">Our Patron</h2>
+
+        <div class="patron__inner">
+
+          <div class="patron__text">
+            <h3>Tim Ross</h3>
+            <p class="patron__role">TV Host, Comedian, Author &amp; Design Advocate</p>
+            <p>
+              Self-confessed 'Design Nerd' Tim 'Rosso' Ross passionately advocates for Australian
+              architecture and design in engaging and innovative ways. A long-time Canberra Modern
+              supporter, Tim speaks nationally on preserving Australia's important architectural character.
+            </p>
+            <p class="patron__awards">
+              Awards: National Trust Heritage Award for Advocacy (2018) &bull; Australian Institute of
+              Architects National President's Prize (2019)
+            </p>
+          </div>
+
+          <div class="patron__image">
+            <img src="assets/images/patron-tim-ross.jpg" alt="Tim Ross, Canberra Modern patron" />
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /section-patron -->
+
+  </main>
+
+
+  <!-- =========================================================
+       SITE FOOTER
+       Four columns: brand, contact, pages, partners.
+       ========================================================= -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="site-footer__inner">
+
+      <!-- Column 1: Brand + copyright -->
+      <div class="footer-brand">
+        <p class="footer-brand__logo">Canberra<br>Modern</p>
+        <p class="footer-brand__copy">
+          &copy; 2026 Canberra Modern.<br>All rights reserved.
+        </p>
+      </div>
+
+      <!-- Column 2: Social + contact -->
+      <div class="footer-contact">
+        <h4>Get In Contact</h4>
+        <div class="footer-social">
+          <!-- Facebook icon -->
+          <a href="https://www.facebook.com/canberramodern/" aria-label="Canberra Modern on Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <!-- Instagram icon -->
+          <a href="https://www.instagram.com/canberra_modern/" aria-label="Canberra Modern on Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+            </svg>
+          </a>
+        </div>
+        <a href="contact.html">Message us</a>
+      </div>
+
+      <!-- Column 3: Pages -->
+      <nav class="footer-pages" aria-label="Footer page links">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="architecture.html">Architecture</a></li>
+          <li><a href="media.html">Media</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 4: Partner links -->
+      <div class="footer-partners">
+        <h4>Partners</h4>
+        <ul role="list">
+          <li><a href="https://unihouse.anu.edu.au/" target="_blank" rel="noopener">University House</a></li>
+          <li><a href="https://www.design.org.au/" target="_blank" rel="noopener">Design Institute of Australia</a></li>
+          <li><a href="https://australia.icomos.org/" target="_blank" rel="noopener">Australia ICOMOS</a></li>
+          <li><a href="https://gml.com.au/" target="_blank" rel="noopener">GML Heritage</a></li>
+          <li><a href="https://www.themilldesign.com.au/" target="_blank" rel="noopener">The Mill Architecture and Design</a></li>
+          <li><a href="https://www.architecture.com.au/act-chapter" target="_blank" rel="noopener">The Australian Institute of Architects</a></li>
+        </ul>
+      </div>
+
+    </div><!-- /site-footer__inner -->
+
+
+
+
+    <!-- Required UC assessment footer note -->
+    <p class="footer-assessment-note">
+      This website was produced by students in the Faculty of Arts &amp; Design,
+      University of Canberra, 2026.
+    </p>
+
+  </footer><!-- /site-footer -->
+
+
+  <script src="assets/js/javascript.js"></script>
+</body>
+</html>
