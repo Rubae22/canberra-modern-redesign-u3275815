@@ -56,9 +56,8 @@ f I continued developing the project, I would spend more time improving image op
 
 I would also spend more time refining smaller interaction details throughout the website. While the navigation and interactive elements function correctly, some transitions and hover states still feel fairly basic and could be made more polished.
 
-There are also areas of the CSS and JavaScript that could be organised more efficiently. As I became more confident throughout development, I realised there were sections of code that could probably be simplified or structured more clearly. Using AI during the project also helped me recognise better coding approaches and areas where my original solutions could be improved or cleaned up further.
+There are also areas of the CSS and JavaScript that could be organised more efficiently. As I became more confident throughout development, I realised there were sections of code that could probably be simplified or structured more clearly. Using AI during the project also helped me recognise better coding approaches and areas where my original solutions could be improved or cleaned up further. Overall, the project helped improve both my technical and design skills, particularly in translating research and Figma mockups into a responsive website with a stronger visual hierarchy and user experience.
 
-Overall, the project helped improve both my technical and design skills, particularly in translating research and Figma mockups into a responsive website with a stronger visual hierarchy and user experience.
 ---
 
 ## GenAI Acknowledgement
